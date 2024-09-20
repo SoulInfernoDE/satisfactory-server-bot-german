@@ -1,12 +1,16 @@
 # Satisfactory Server Discord Bot
 
-A simple Discord bot that uses the new Satisfactory dedicated server API to keep track of the server state and send a message whenever someone joins or leaves the game.
+----------------------------------------
+## Übersetzt auf Deutsch ##
+----------------------------------------
 
-The API is very limited, so there isn't any way to retrieve chat logs or the player names yet.
+Einfacher Discord bot welcher die neue Satisfactory dedicated server API verwendet um Daten in Discord zu posten, immer wenn jemand dem Spiel beitritt oder es verlässt.
+
+Die API ist start limitiert. Aktuell gibt es noch keine Möglichkeit chat logs oder Spielernamen abzufragen..
 
 ## Setup:
 
-- Create a `.env` file containing:
+- Erstelle die Datei `.env` mit folgendem Inhalt:
 
 ```dotenv
 DISCORD_TOKEN=<bot token>
@@ -16,7 +20,18 @@ SATISFACTORY_API_BASE=https://<server_ip>:7777/api/v1
 UPDATE_FREQUENCY_SEC=20
 ```
 
-- Run `pnpm install`
-- Run `pnpm build`
-- Run `pnpm start`
+Einen Bot auf dem Discord Entwicklerportal (https://discord.com/developers/applications) generieren und ihn seinem Server hinzufügen anschließend weiter mit:
 
+- Run `npm install`
+- Run `npm run build`
+- Run `npm start`
+
+DISCORD_TOKEN
+-> Kann man aus dem Discord Entwicklerportal bekommen
+
+DISCORD_CHANNEL_ID
+-> Struktur: https ://discord.com/channels/[Server-ID]/[Channel-ID]/[Message-ID] 
+
+SATISFACTORY_TOKEN
+-> Kann man in der Konsole des laufenden Satisfactory Spiels generieren mit:
+server.GenerateAPIToken
