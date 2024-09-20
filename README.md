@@ -6,7 +6,7 @@
 
 Einfacher Discord bot welcher die neue Satisfactory dedicated server API verwendet um Daten in Discord zu posten, immer wenn jemand dem Spiel beitritt oder es verlässt.
 
-Die API ist start limitiert. Aktuell gibt es noch keine Möglichkeit chat logs oder Spielernamen abzufragen..
+Die API ist stark limitiert. Aktuell gibt es noch keine Möglichkeit chat logs oder Spielernamen abzufragen..
 
 ## Setup:
 
