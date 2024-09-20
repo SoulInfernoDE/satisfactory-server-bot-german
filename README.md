@@ -36,7 +36,7 @@ SATISFACTORY_TOKEN
 -> Kann man in der Konsole des laufenden Satisfactory Spiels generieren mit:
 server.GenerateAPIToken
 
-# Docker Satisfactory Discord Status Bot Server
+# Docker Satisfactory Discord Status Bot Server (Work In Progress: Actually Working)
 ---------------------------------------
 
 Git-Verzeichnis auf die Festplatte klonen,im Terminal in den Docker-HUB einloggen und ein Docker Image daraus bauen:
