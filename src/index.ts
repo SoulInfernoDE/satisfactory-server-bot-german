@@ -29,9 +29,9 @@ client.once("ready", () => {
   // Player count
   watchdog.callbacks.numConnectedPlayers = async (oldValue, newValue) => {
     if (newValue > oldValue) {
-      sendMsg(`Jemand hat das Spiel betreten! (Player count ${oldValue}->${newValue})`);
+      sendMsg(`Jemand hat das Spiel betreten! (Spieleranzahl ${oldValue} --> ${newValue})`);
     } else if (newValue < oldValue) {
-      sendMsg(`Jemand hat das Spiel verlassen! (Player count ${oldValue}->${newValue})`);
+      sendMsg(`Jemand hat das Spiel verlassen! (Spieleranzahl ${oldValue} --> ${newValue})`);
     }
   };
 
