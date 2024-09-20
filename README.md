@@ -50,3 +50,6 @@ Euer gebautes Image könnt ihr jetzt auf eure Docker-HUB Repository pushen
 Jetzt könnt ihr euer Satisfactory Discord Statusbot Docker Image jederzeit auf einem beliebigen Docker Server laufen lassen
 -> Zum Starten müsst Ihr in den Docker-HUB eingeloggt sein (Da privates Repository): docker run dein_dockerhub_benutzername/satisfactorystatusbotgerman
 
+TIPP:
+--------------------------------------------------
+Testet eure frisch erstellte .env Datei zunächst lokal und erstellt dann erst das Docker Image.
