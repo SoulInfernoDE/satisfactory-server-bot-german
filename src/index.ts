@@ -11,12 +11,12 @@ let watchdog: SatisfactoryWatchdog | null = null;
 client.once("ready", () => {
   const channel = client.channels.cache.get(config.DISCORD_CHANNEL_ID);
   if (!channel) {
-    console.error("Channel does not exist");
+    console.error("Kanal existiert nicht");
     return;
   }
   watchdog = new SatisfactoryWatchdog();
 
-  console.log("Bot is ready !");
+  console.log("Bot ist bereit !");
 
   const sendMsg = (msg?: string) => {
     if (msg && channel.isSendable()) {
@@ -29,17 +29,17 @@ client.once("ready", () => {
   // Player count
   watchdog.callbacks.numConnectedPlayers = async (oldValue, newValue) => {
     if (newValue > oldValue) {
-      sendMsg(`Someone joined the game! (Player count ${oldValue}->${newValue})`);
+      sendMsg(`Jemand hat das Spiel betreten! (Player count ${oldValue}->${newValue})`);
     } else if (newValue < oldValue) {
-      sendMsg(`Someone left the game! (Player count ${oldValue}->${newValue})`);
+      sendMsg(`Jemand hat das Spiel verlassen! (Player count ${oldValue}->${newValue})`);
     }
   };
 
   watchdog.callbacks.isGamePaused = async (_, paused) => {
     if (paused) {
-      sendMsg(`Server is now paused.`);
+      sendMsg(`Der Server ist jetzt pausiert.`);
     } else {
-      sendMsg(`Server is no longer paused.`);
+      sendMsg(`Der Server ist nicht länger pausiert.`);
     }
   };
 
