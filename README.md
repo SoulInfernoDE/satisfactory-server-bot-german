@@ -36,6 +36,33 @@ SATISFACTORY_TOKEN
 server.GenerateAPIToken
 
 
+
+--------------------------------------------------
+
+### Docker Satisfactory Discord Status Bot Server per Docker Compose starten
+
+--> Die compose.yaml Datei herunterladen und nutzen  ..oder
+---> Diese Vorlage nutzen:
+
+```
+version: "3"
+
+volumes:
+  satisdiscordstatusbot:
+
+services:
+   satisfactorydiscordstatusbot:
+      image: soulinferno/satisfactoryserverdiscordbotgerman
+      restart: always
+      container_name: satisfactorydiscordstatusbotgerman
+      command: node ./dist/index.js
+      volumes:
+#  Pfadangabe ist verpflichtend. Bitte auf die selbsterstellte .env Datei ändern
+        - /volume1/server/.env:/home/node/app/config/.env
+
+```
+
+
 --------------------------------------------------
 
 
