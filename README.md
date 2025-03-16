@@ -36,9 +36,32 @@ SATISFACTORY_TOKEN
 -> Kann man in der Konsole des laufenden Satisfactory Spiels generieren mit:
 server.GenerateAPIToken
 
-# Docker Satisfactory Discord Status Bot Server (Work In Progress: Actually Working)
----------------------------------------
+# Docker Satisfactory Discord Status Bot Server per Synology DiskStation (Angabe des Dateipfad der .env -Datei verpflichtend!)
+--------------------------------------------------
 
+
+--------------------------------------------------
+
+
+
+# Docker Satisfactory Discord Status Bot Server aus der Docker Registry ziehen per Terminal (Angabe des Dateipfad der .env -Datei verpflichtend!)
+--------------------------------------------------
+
+`docker pull soulinferno/satisfactoryserverdiscordbotgerman:latest`
+
+und/oder
+
+`docker run -v /mein/lokaler/Pfad/zur/.env-Datei:/home/node/app/config/.env soulinferno/satisfactoryserverdiscordbotgerman:latest`
+
+ACHTUNG: Bitte den Pfad zur eigenen Datei angeben bei: /mein/lokaler/Pfad/zur/.env-Datei
+Beispiel: /volume1/server/satisfactorybot/.env:/home/node/app/config/.env
+
+--------------------------------------------------
+
+
+
+# Docker Satisfactory Discord Status Bot Server aus den Quellen bauen mit der Dockerfile Datei
+--------------------------------------------------
 Git-Verzeichnis auf die Festplatte klonen,im Terminal in den Docker-HUB einloggen und ein Docker Image daraus bauen:
 -> Einloggen mit: docker login -u dein_dockerhub_benutzername
 --> Image lokal Bauen mit: sudo docker build -t dein_dockerhub_benutzername/satisfactorystatusbotgerman .
