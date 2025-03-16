@@ -1,12 +1,12 @@
 FROM node:current-alpine
 
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+RUN mkdir -p /home/node/app/node_modules /home/node/app/config && ln -s /home/node/app/config/.env /home/node/app/.env && chown -R node:node /home/node/app && apk add --no-cache nano pnpm
 
 WORKDIR /home/node/app
 
 COPY . ./
 
-RUN npm install && npm run build
+RUN pnpm install && pnpm run build
 
 USER node
 
