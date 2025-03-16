@@ -1,10 +1,9 @@
-# Satisfactory Server Discord Bot
 
-----------------------------------------
-## Übersetzt auf Deutsch ##
-----------------------------------------
+--------------------------------------------------
+## Satisfactory Server Discord Bot - Übersetzt auf Deutsch
 
-Einfacher Discord bot welcher die neue Satisfactory dedicated server API verwendet um Daten in Discord zu posten, immer wenn jemand dem Spiel beitritt oder es verlässt.
+->
+Einfacher Discord Bot welcher die neue Satisfactory dedicated server API verwendet um Daten in Discord zu posten, immer wenn jemand dem Spiel beitritt oder es verlässt.
 
 Die API ist stark limitiert. Aktuell gibt es noch keine Möglichkeit chat logs oder Spielernamen abzufragen..
 
@@ -36,16 +35,57 @@ SATISFACTORY_TOKEN
 -> Kann man in der Konsole des laufenden Satisfactory Spiels generieren mit:
 server.GenerateAPIToken
 
-# Docker Satisfactory Discord Status Bot Server per Synology DiskStation (Angabe des Dateipfad der .env -Datei verpflichtend!)
---------------------------------------------------
-
 
 --------------------------------------------------
 
 
+### Docker Satisfactory Discord Status Bot Server per Synology DiskStation einrichten (Angabe des Dateipfad der .env -Datei verpflichtend!)
 
-# Docker Satisfactory Discord Status Bot Server aus der Docker Registry ziehen per Terminal (Angabe des Dateipfad der .env -Datei verpflichtend!)
+Container Manager starten
+
+![grafik](https://github.com/user-attachments/assets/0d0aa002-f997-4cf2-8100-02b6e4d5e27e)
+
+#
+Auf Registrierung klicken, dann rechts oben in das Suchfeld: SoulInfernoDE eingeben (Enter)
+Die Zeile für den Discord Bot auswählen und oben links Download anklicken
+![grafik](https://github.com/user-attachments/assets/de16343c-777a-427c-9ace-6f8ff4c76d4a)
+
+#
+Wenn der Download fertig ist links auf: Image, dann das Discord Bot Server Image auswählen
+Oben rechts auf Ausführen klicken
+![grafik](https://github.com/user-attachments/assets/16f10381-7831-4275-a688-0c87056d46ad)
+
+#
+Einen beliebiegen Containernamen eingeben wie z.B. satisfactorystatusdiscordbot 
+Anschließend auf (Weiter)
+
+![grafik](https://github.com/user-attachments/assets/9ed8afb8-048f-4443-826f-d63ee36c6ffe)
+
+#
+
+'+' Datei hinzufügen --> Die selbst erstellte .env Datei wählen
+![grafik](https://github.com/user-attachments/assets/c908b7a9-a6e8-49b2-b085-2e91e676e4ca)
+
+#
+Im zweiten Feld MUSS folgendes eingetragen sein: /home/node/app/config/.env   (Schreibgeschützt) --> Weiter
+![grafik](https://github.com/user-attachments/assets/fe1d18d7-c161-434e-8cba-732a09e9c55b)
+
+#
+Im letzten Fenster auf (Fertig)
+![grafik](https://github.com/user-attachments/assets/a59cb48e-3d1b-4184-bc5c-75a00c7c7ef6)
+
+#
+Der Discord Bot läuft jetzt. Wenn er gestoppt wird kann in den Einstellungen "Automatisch starten"
+aktiviert werden. Dann wird er auch nach einem Neustart der Synology DiskStation wieder automatisch
+gestartet.
+
+Konfigurationseinstellungen können mit einem Texteditor auf der Synology DiskStation vorgenommen werden.
+
 --------------------------------------------------
+
+
+
+### Docker Satisfactory Discord Status Bot Server aus der Docker Registry ziehen per Terminal (Angabe des Dateipfad der .env -Datei verpflichtend!)
 
 `docker pull soulinferno/satisfactoryserverdiscordbotgerman:latest`
 
@@ -56,13 +96,28 @@ und/oder
 ACHTUNG: Bitte den Pfad zur eigenen Datei angeben bei: /mein/lokaler/Pfad/zur/.env-Datei
 Beispiel: /volume1/server/satisfactorybot/.env:/home/node/app/config/.env
 
+
+Fertig. Der Bot läuft jetzt.
+
+
+--------------------------------------------------
+
+
+# Fehlerbehebung
+Der Bot wirft den Fehler aus: .env Datei nicht gefunden:
+
+-> Ändert den Eigentümer auf den Ordner der Datei auf: admin
+
+-> Setzt die Berechtigungen der .env Datei auf: 644
+
 --------------------------------------------------
 
 
 
-# Docker Satisfactory Discord Status Bot Server aus den Quellen bauen mit der Dockerfile Datei
+
+### Docker Satisfactory Discord Status Bot Server aus den Quellen bauen mit der Dockerfile Datei
 --------------------------------------------------
-Git-Verzeichnis auf die Festplatte klonen,im Terminal in den Docker-HUB einloggen und ein Docker Image daraus bauen:
+Git-Verzeichnis auf die Festplatte klonen (git clone https://github.com/SoulInfernoDE/satisfactory-server-bot-german.git), im Terminal in den Docker-HUB einloggen und ein Docker Image daraus bauen:
 -> Einloggen mit: docker login -u dein_dockerhub_benutzername
 --> Image lokal Bauen mit: sudo docker build -t dein_dockerhub_benutzername/satisfactorystatusbotgerman .
 ---> UNBEDINGT VORHER DAS DOCKER HUB REPOSITORY AUF PRIVAT STELLEN SONST VERÖFFENTLICH IHR EURE .ENV DATEI. DIE .ENV DATEI NIEMALS VERÖFFENTLICHEN!!
@@ -74,5 +129,5 @@ Jetzt könnt ihr euer Satisfactory Discord Statusbot Docker Image jederzeit auf 
 -> Zum Starten müsst Ihr in den Docker-HUB eingeloggt sein (Da privates Repository): docker run dein_dockerhub_benutzername/satisfactorystatusbotgerman
 
 TIPP:
---------------------------------------------------
 Testet eure frisch erstellte .env Datei zunächst lokal und erstellt dann erst das Docker Image.
+--------------------------------------------------
