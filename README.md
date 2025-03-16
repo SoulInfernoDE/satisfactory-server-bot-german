@@ -41,6 +41,7 @@ server.GenerateAPIToken
 
 ### Docker Satisfactory Discord Status Bot Server per Docker Compose starten
 
+#
 --> Die compose.yaml Datei herunterladen und nutzen  ..oder
 ---> Diese Vorlage nutzen:
 
